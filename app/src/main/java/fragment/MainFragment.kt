@@ -1,11 +1,11 @@
-package com.example.circleescape
+package fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.circleescape.databinding.FragmentPlayBinding
+import com.example.circleescape.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -14,16 +14,13 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [PlayFragment.newInstance] factory method to
+ * Use the [MainFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PlayFragment : Fragment() {
+class MainFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
-    // 바인딩
-    private lateinit var fr1Binding:FragmentPlayBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,18 +35,7 @@ class PlayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        // return inflater.inflate(R.layout.fragment_play, container, false)
-
-        // 바인딩으로 리턴
-        fr1Binding = FragmentPlayBinding.inflate(inflater)
-        return fr1Binding.root
-
-        // fragment의 버튼 클릭시 텍스트 변경
-        fr1Binding.changebutton.setOnClickListener {
-            fr1Binding.textView3.text = "Button Click!"
-        }
-
-
+        return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
     companion object {
@@ -59,12 +45,12 @@ class PlayFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment PlayFragment.
+         * @return A new instance of fragment MainFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            PlayFragment().apply {
+            MainFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
